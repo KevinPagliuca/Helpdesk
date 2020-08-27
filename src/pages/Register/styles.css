@@ -1,0 +1,67 @@
+#page-register {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
+#page-register .teste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50vw;
+  height: 100vh;
+  background: url('../../assets/RegisterBackground.svg') center #e0e0e0;
+ 
+}
+
+#page-register .register-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  flex-direction: column;
+  height: 100vh;  
+}
+
+.backButton {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  cursor: pointer;
+}
+
+#page-register .register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 50vw;
+  height: 100vh;
+  color: #fff;  
+  background: url('../../assets/background-primary.png') 100% / cover fixed, rgb(28, 26, 31);
+}
+
+#page-register .container-form .input-block .content {
+  border-bottom: 2px solid rgb(87, 85, 85);  
+  border-radius: 0; 
+}
+
+.container-form .input-block .content .active {
+  border-radius: 0;
+}
+
+.container-form .input-block .content:first-of-type input {
+  border-radius: 8px 8px 0 0;
+}
+
+.container-form .input-block .content:last-of-type input {
+  border-radius: 0 0 8px 8px;
+}
+
+#page-register .container-form .input-block .content:last-child {
+  border: 0;
+}

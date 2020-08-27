@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+ color: #fff;
+ background: url('./assets/background-primary.png') 100% / cover fixed, rgb(28, 26, 31);
+ font-family: 'roboto', sans-serif;
+ min-height: 100vh;
+}
+
+:root {
+  --background: #F0F0F7;
+  --primary-lighter: #9871F5;
+  --primary-light: #916BEA;
+  --primary: #8257E5;
+  --primary-dark: #774DD6;
+  --primary-darker: #6842C2;
+  --secundary: #04D361;
+  --secundary-dark: #04BF58;
+  --title-in-primary: #FFFFFF;
+  --text-in-primary: #D4C2FF;
+  --text-title: #32264D;
+  --text-complement: #9C98A6;
+  --text-base: #6A6180;
+  --line-in-white: #E6E6F0;
+  --input-background: #F8F8FC;
+  --button-text: #FFFFFF;
+  --box-base: #FFFFFF;
+  --box-footer: #FAFAFC;
+}
