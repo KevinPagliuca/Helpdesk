@@ -1,0 +1,82 @@
+#header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 85px;
+    padding: 12px 50px;
+    background: rgb(27, 23, 23);
+    box-shadow: 0 0 8px 2px rgb(27, 23, 23);
+}
+
+#header-container .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 280px;
+    width: 100%;
+}
+
+#header-container .header-logo img {
+    width: 150px;
+    height: 45px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+#header-container .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    max-width: 280px;
+    width: 100%;
+}
+
+.header-content .infoUser {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.header-content .infoUser strong {
+    color: #f0f0f0;
+    font: 600 14px Archivo;
+    margin-bottom: 5px;
+}
+
+.header-content .infoUser p {
+    color: #999999;
+    font: 500 12px Poppins;
+}
+
+.header-content .imgUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #f0f0f0;
+    margin-left: 12px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.header-content .imgUser:hover {
+    border: 5px solid #c51313;
+    background: #000;
+}
+
+.header-content .imgUser img {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;    
+    border: 2px solid #F31212;
+}
+
+.header-content .imgUser img:hover {
+    opacity: 0.7;
+    transition: all 0.3s;
+}

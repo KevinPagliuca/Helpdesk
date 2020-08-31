@@ -5,15 +5,50 @@
   height: 100vh;
 }
 
-#page-register .teste {
+.slogan {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  flex-direction: column;
   width: 50vw;
   height: 100vh;
-  background: url('../../assets/RegisterBackground.svg') center #e0e0e0;
- 
+  background: url('../../assets/RegisterBackground.svg') center no-repeat #9D1C30;
+}
+
+.slogan div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+}
+
+.slogan div h1 {
+  font: 500 28px Poppins;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+  text-align: start;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.slogan div p {
+  font: 500 14px Poppins;
+  text-align: start;
+  color: #ceb6b6;
+  width: 100%;
+}
+
+#page-register .register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 100vh;
+  color: #fff;
+  background: url('../../assets/background-primary.png') 100% / cover fixed, rgb(28, 26, 31);
 }
 
 #page-register .register-container form {
@@ -21,9 +56,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
-
   flex-direction: column;
-  height: 100vh;  
+  height: 100vh;
 }
 
 .backButton {
@@ -33,21 +67,9 @@
   cursor: pointer;
 }
 
-#page-register .register-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  width: 50vw;
-  height: 100vh;
-  color: #fff;  
-  background: url('../../assets/background-primary.png') 100% / cover fixed, rgb(28, 26, 31);
-}
-
 #page-register .container-form .input-block .content {
-  border-bottom: 2px solid rgb(87, 85, 85);  
-  border-radius: 0; 
+  border-bottom: 2px solid rgb(87, 85, 85);
+  border-radius: 0;
 }
 
 .container-form .input-block .content .active {

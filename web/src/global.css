@@ -4,6 +4,7 @@
   outline: 0;
   box-sizing: border-box;
 }
+
 ul {
   list-style: none;
 }
@@ -14,10 +15,10 @@ a {
 }
 
 body {
- color: #fff;
- background: url('./assets/background-primary.png') 100% / cover fixed, rgb(28, 26, 31);
- font-family: 'roboto', sans-serif;
- min-height: 100vh;
+  color: #fff;
+  background: rgb(41, 32, 32);
+  font-family: 'roboto', sans-serif;
+  min-height: 100vh;
 }
 
 :root {

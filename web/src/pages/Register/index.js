@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 import back from '../../assets/back.svg';
+import logoImg from '../../assets/Logo.png';
 
 import './styles.css';
 import { useHistory } from 'react-router-dom';
@@ -90,7 +91,7 @@ const Register = () => {
                   <FaEyeSlash
                     className="icon-eye"
                     size={24}
-                    color="#38c54a"
+                    color="#F31212"
                     onClick={attIcon}
                     style={password !== '' ? { cursor: 'pointer' } : { cursor: 'not-allowed' }}
                   />
@@ -115,8 +116,15 @@ const Register = () => {
           </div>
         </form>
       </div>
-      <div className="teste">
-
+      <div className="slogan">
+        <div>
+          <img src={logoImg} width={350} height={100} alt="logo" />
+          <h1>Helpdesk System</h1>
+          <p> O sistema perfeito para você controlar <br />
+            e analisar seus chamados de <br />
+            forma estravagante!!
+        </p>
+        </div>
       </div>
     </div>
   );

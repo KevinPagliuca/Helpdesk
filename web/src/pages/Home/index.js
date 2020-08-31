@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import logoImg from '../../assets/Logo.png';
+
 import './styles.css';
 
 function Home() {
@@ -21,7 +25,17 @@ function Home() {
     }
 
     return (
-        <div id="page-home">        
+        <div id="page-home">
+            <div className="slogan">
+                <div>
+                    <img src={logoImg} width={350} height={100} alt="logo" />
+                    <h1>Helpdesk System</h1>
+                    <p> O sistema perfeito para você controlar<br />
+                        e analisar seus chamados de<br />
+                        forma estravagante!
+                    </p>
+                </div>
+            </div>
             <div className="home-container">
                 <form>
                     <h2 className="Text">Fazer login <br /></h2>
@@ -61,7 +75,7 @@ function Home() {
                                     <FaEyeSlash
                                         className="icon-eye"
                                         size={24}
-                                        color="#38c54a"
+                                        color="#F31212"
                                         onClick={attIcon}
                                         style={password !== '' ? { cursor: 'pointer' } : { cursor: 'not-allowed' }}
                                     />
@@ -85,7 +99,7 @@ function Home() {
                 </form>
                 <div className="sign-up">
                     <p>Não tenho conta? <br />
-                        <strong>Cadastre-se</strong>
+                        <strong><Link to="/register">Cadastre-se</Link></strong>
                     </p>
 
                     <p>É de graça!</p>
