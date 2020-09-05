@@ -1,0 +1,120 @@
+.container-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font: 16px Poppins;
+    width: 350px;
+}
+
+.container-form .input-block {
+    position: relative;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: rgb(65, 61, 61);
+    color: #9C98A6;
+}
+
+.container-form .input-block .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 0;
+    box-sizing: border-box;
+    height: 72px;
+}
+
+.container-form .input-block .content:first-child {
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 2px solid rgb(87, 85, 85);
+}
+
+.container-form .input-block .content:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.container-form .input-block .content input {
+    width: 100%;
+    height: 100%;
+    line-height: 24px;
+    padding: 0 38px 0 15px;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+    color: #E6E6F0;
+    font: 400 16px Archivo;
+}
+
+.container-form .input-block .content label {
+    position: absolute;
+    width: (100% - 15px);
+    left: 15px;
+    font: 500 16px Poppins;
+}
+
+.container-form .input-block .content:focus-within label, .container-form .input-block .content .label-active {
+    transform: translateY(-12px);
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.container-form .input-block .content:focus-within input, .container-form .input-block .content .active {
+    padding-top: 20px;
+    border-radius: 8px 8px 0 0;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.container-form .input-block .content input[type="date"].active {
+    padding: 20px 20px 0 15px;
+}
+
+.container-form .input-block .content:last-child .active {
+    border-radius: 0 0 8px 8px;
+}
+
+.container-form .input-block .content:focus-within .border-input {
+    position: absolute;
+    width: 100%;
+    max-width: 2px;
+    height: 48px;
+    left: 0;
+    border: 0;
+    border-radius: 10px;
+    border-left: 2px solid #F31212;
+    transition: border-left 0.2s;
+}
+
+.container-form .btnEntrar {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.container-form .btnEntrar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0 0;
+    border-radius: 8px;
+    border: 0;
+    background: rgb(65, 61, 61);
+    cursor: pointer;
+    transition: background 0.4s ease-out;
+}
+
+.container-form .btnEntrar button a {
+    width: 100%;
+    font: 700 18px Archivo;
+    color: #F31212;
+}
+
+.container-form .btnEntrar button a:hover {
+    color: var(--crimson);
+}

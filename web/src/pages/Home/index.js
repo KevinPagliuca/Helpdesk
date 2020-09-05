@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import InputGroup from '../../components/InputGroup';
+
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import logoImg from '../../assets/Logo.png';
 
@@ -39,29 +41,31 @@ function Home() {
             <div className="home-container">
                 <form>
                     <h2 className="Text">Fazer login <br /></h2>
+
                     <div className="container-form">
                         <div className="input-block">
-                            <div>
-                                <label htmlFor="e-mail" className={email !== '' ? "label-active" : ""}>E-mail</label>
-                                <input
-                                    id="e-mail"
-                                    type="text"
-                                    className={email !== '' ? "active" : ""}
-                                    onChange={e => setEmail(e.target.value)}
-                                />
-                                <div className="border-input" />
-                            </div>
 
-                            <div>
-                                <label htmlFor="password" className={password !== '' ? "label-active" : ""}>Senha</label>
-                                <input
-                                    autoComplete="off"
-                                    id="password"
-                                    className={password !== '' ? "active" : ""}
-                                    type="password"
-                                    onChange={e => setPassword(e.target.value)}
-                                />
-                                <div className="border-input" />
+                            <InputGroup
+                                id="e-mail"
+                                type="text"
+                                className={email !== '' ? "active" : null}
+                                onChange={e => setEmail(e.target.value)}
+
+                                labelname="E-mail"
+                                labelclass={email !== '' ? "label-active" : ""}
+                            />
+
+                            <InputGroup
+                                autoComplete="off"
+                                id="password"
+                                className={password !== '' ? "active" : null}
+                                type="password"
+                                onChange={e => setPassword(e.target.value)}
+
+                                labelname="Senha"
+                                labelclass={password !== '' ? "label-active" : ""}
+
+                            >
                                 {eye !== 0 && password !== ''
                                     ?
                                     <FaEye
@@ -80,7 +84,7 @@ function Home() {
                                         style={password !== '' ? { cursor: 'pointer' } : { cursor: 'not-allowed' }}
                                     />
                                 }
-                            </div>
+                            </InputGroup>
                         </div>
 
                         <div className="options">
@@ -93,7 +97,7 @@ function Home() {
                         </div>
 
                         <div className="btnEntrar">
-                            <button type="submit">Entrar</button>
+                            <button type="submit"><Link to="/myaccount">Entrar</Link></button>
                         </div>
                     </div>
                 </form>

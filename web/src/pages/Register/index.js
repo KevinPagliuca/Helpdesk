@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { useHistory, Link } from 'react-router-dom';
+
+import InputGroup from '../../components/InputGroup';
 
 import back from '../../assets/back.svg';
 import logoImg from '../../assets/Logo.png';
 
 import './styles.css';
-import { useHistory } from 'react-router-dom';
 
 const Register = () => {
   const [eye, setEye] = useState(0);
@@ -46,38 +48,38 @@ const Register = () => {
 
           <div className="container-form">
             <div className="input-block">
-              <div className="content">
-                <label htmlFor="name" className={name !== '' ? "label-active" : ""}>Nome completo</label>
-                <input
-                  id="name"
-                  type="text"
-                  className={name !== '' ? "active" : ""}
-                  onChange={e => setName(e.target.value)}
-                />
-                <div className="border-input" />
-              </div>
 
-              <div className="content">
-                <label htmlFor="e-mail" className={email !== '' ? "label-active" : ""}>E-mail</label>
-                <input
-                  id="e-mail"
-                  type="text"
-                  className={email !== '' ? "active" : ""}
-                  onChange={e => setEmail(e.target.value)}
-                />
-                <div className="border-input" />
-              </div>
+              <InputGroup
+                id="name"
+                type="text"
+                className={name !== '' ? "active" : null}
+                onChange={e => setName(e.target.value)}
 
-              <div className="content">
-                <label htmlFor="password" className={password !== '' ? "label-active" : ""}>Senha</label>
-                <input
-                  id="password"
-                  type="password"
-                  autoComplete="off"
-                  className={password !== '' ? "active" : ""}
-                  onChange={e => setPassword(e.target.value)}
-                />
-                <div className="border-input" />
+                labelname="Nome completo"
+                labelclass={name !== '' ? "label-active" : null}
+              />
+
+              <InputGroup
+                id="e-mail"
+                type="email"
+                className={email !== '' ? "active" : null}
+                onChange={e => setEmail(e.target.value)}
+
+                labelname="E-mail"
+                labelclass={email !== '' ? "label-active" : null}
+              />
+
+              <InputGroup
+                autoComplete="off"
+                id="password"
+                className={password !== '' ? "active" : null}
+                type="password"
+                onChange={e => setPassword(e.target.value)}
+
+                labelname="Senha"
+                labelclass={password !== '' ? "label-active" : ""}
+
+              >
                 {eye !== 0 && password !== ''
                   ?
                   <FaEye
@@ -96,22 +98,21 @@ const Register = () => {
                     style={password !== '' ? { cursor: 'pointer' } : { cursor: 'not-allowed' }}
                   />
                 }
-              </div>
+              </InputGroup>
 
-              <div className="content">
-                <label htmlFor="confPass" className={confPassword !== '' ? "label-active" : ""}>Confirme sua senha</label>
-                <input
-                  id="confPass"
-                  type="password"
-                  autoComplete="off"
-                  className={confPassword !== '' ? "active" : ""}
-                  onChange={e => setConfPassword(e.target.value)}
-                />
-                <div className="border-input" />
-              </div>
+              <InputGroup
+                id="confPass"
+                type="password"
+                className={confPassword !== '' ? "active" : null}
+                onChange={e => setConfPassword(e.target.value)}
+
+                labelname="Confirme sua senha"
+                labelclass={confPassword !== '' ? "label-active" : null}
+              />
+
             </div>
             <div className="btnEntrar">
-              <button type="submit">Concluir cadastro</button>
+              <button type="submit"><Link to="/">Concluir cadastro</Link></button>
             </div>
           </div>
         </form>
@@ -129,5 +130,4 @@ const Register = () => {
     </div>
   );
 }
-
 export default Register;

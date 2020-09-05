@@ -11,33 +11,25 @@ ul {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
 }
 
 body {
-  color: #fff;
-  background: rgb(41, 32, 32);
+  color: var(--white);
+  background: var(--background-body);
   font-family: 'roboto', sans-serif;
   min-height: 100vh;
 }
 
 :root {
-  --background: #F0F0F7;
-  --primary-lighter: #9871F5;
-  --primary-light: #916BEA;
-  --primary: #8257E5;
-  --primary-dark: #774DD6;
-  --primary-darker: #6842C2;
-  --secundary: #04D361;
-  --secundary-dark: #04BF58;
-  --title-in-primary: #FFFFFF;
-  --text-in-primary: #D4C2FF;
-  --text-title: #32264D;
-  --text-complement: #9C98A6;
-  --text-base: #6A6180;
-  --line-in-white: #E6E6F0;
-  --input-background: #F8F8FC;
-  --button-text: #FFFFFF;
-  --box-base: #FFFFFF;
-  --box-footer: #FAFAFC;
+  --background-body: rgb(41, 32, 32);
+  --primary-white: #f0f0f0;
+  --white: #fff;
+  --black: #000;
+  --red: #f31212;
+  --crimson: #9D1C30;
+  --title: #E6E6F0;
+  --text-dark: #9C98A6;
+  --background-header: rgb(26,24,24);
+  --background-footer: rgb(26,24,24);
 }

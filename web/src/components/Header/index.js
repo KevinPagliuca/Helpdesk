@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaBars } from 'react-icons/fa';
 
 import logoImg from '../../assets/Logo.png';
 import userImg from '../../assets/User.png';
@@ -12,6 +11,15 @@ const Header = (props) => {
         <header id="header-container">
             <div className="header-logo">
                 <img src={logoImg} alt="logo" />
+            </div>
+
+            <div className="header-nav">
+                <ul>
+                    <li className="active"><a>Home</a></li>
+                    <li><a>Chamados</a></li>
+                    <li><a>Ajuda</a></li>
+                    <li><a>Contato</a></li>
+                </ul>
             </div>
 
             <div className="header-content">

@@ -12,7 +12,7 @@
   flex-direction: column;
   width: 50vw;
   height: 100vh;
-  background: url('../../assets/RegisterBackground.svg') center no-repeat #9D1C30;
+  background: url('../../assets/RegisterBackground.svg') center no-repeat var(--crimson);
 }
 
 .slogan div {
@@ -26,7 +26,7 @@
 
 .slogan div h1 {
   font: 500 28px Poppins;
-  color: #e0e0e0;
+  color: var(--title);
   margin-bottom: 5px;
   text-align: start;
   width: 100%;
@@ -36,7 +36,7 @@
 .slogan div p {
   font: 500 14px Poppins;
   text-align: start;
-  color: #ceb6b6;
+  color: #bfbfbf;
   width: 100%;
 }
 
@@ -67,7 +67,8 @@
   cursor: pointer;
 }
 
-#page-register .container-form .input-block .content {
+.container-form .input-block .content {
+  width: 100%;
   border-bottom: 2px solid rgb(87, 85, 85);
   border-radius: 0;
 }
@@ -84,6 +85,6 @@
   border-radius: 0 0 8px 8px;
 }
 
-#page-register .container-form .input-block .content:last-child {
+.container-form .input-block .content:last-child {
   border: 0;
 }
