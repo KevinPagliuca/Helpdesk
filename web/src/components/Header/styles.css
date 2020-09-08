@@ -1,112 +1,135 @@
 #header-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     width: 100vw;
-    height: 85px;
-    padding: 12px 50px;
-    background: rgb(27, 23, 23);
-    box-shadow: 0 0 8px 2px rgb(27, 23, 23);
+    height: 140px;
+    background: #9D1C30;
+    margin-bottom: 20px;
 }
 
 #header-container .header-logo {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    max-width: 280px;
+    justify-content: center;
     width: 100%;
+    height: 70px;
 }
 
 #header-container .header-logo img {
     width: 150px;
-    height: 45px;
-    margin-left: 25px;
-    cursor: pointer;
+    height: 50px;
 }
 
-#header-container .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    cursor: pointer;
-    max-width: 280px;
-    width: 100%;
-}
-
-.header-content .infoUser {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    flex-direction: column;
-}
-
-.header-content .infoUser strong {
-    color: #f0f0f0;
-    font: 600 14px Archivo;
-    margin-bottom: 5px;
-}
-
-.header-content .infoUser p {
-    color: #999999;
-    font: 500 12px Poppins;
-}
-
-.header-content .imgUser {
+#header-container .nav-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #fff;
+    width: 100vw;
+    height: 70px;
+}
+
+#header-container .nav-container ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-container .nav-container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    /* border-bottom: 2px solid #251b25;     */
+    margin-right: 20px;
+}
+
+#header-container .nav-container ul li:last-child {
+    margin-right: 0;
+}
+
+#header-container .nav-container ul li a {
+    transform: translateZ(0);
     position: relative;
-    background: #f0f0f0;
-    margin-left: 12px;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+    color: rgba(27, 23, 23);
+    font: 500 16px Poppins;
 }
 
-.header-content .imgUser:hover {
-    background: #000;
+#header-container .nav-container ul li a:hover {
+    color: #9D1C30;
+    transition: color 0.3s ease-out;
 }
 
-.header-content .imgUser img {
+#header-container .nav-container ul li a:before {
+    content: "";
     position: absolute;
-    top: 0;
+    z-index: -1;
     left: 0;
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    border: 2px solid #F31212;
+    right: 100%;
+    bottom: 0;
+    background: #9D1C30;
+    height: 2px;
+    transition: right 0.3s ease-out;
 }
 
-.header-content .imgUser img:hover {
-    opacity: 0.7;
-    transition: all 0.3s;
+#header-container .nav-container ul li a:hover:before {
+    right: 0;
+    color: #9D1C30;
 }
 
-#header-container .header-nav, .header-nav ul {
+.dropdown {
+    position: relative;
+    display: block;
+    font: 500 16px Poppins;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.dropdown span {
+    
+    font: 500 16px Poppins;
+    color: rgba(27, 23, 23);
+}
+.dropdown:hover {
+    color: #9D1C30;
+    transition: color .3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 217px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 0;
+    z-index: 1;
+}
+
+.dropdown-content svg {
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.dropdown-content a {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.header-nav ul li {    
-    padding: 10px 0px;
-    margin-right: 35px;
-    cursor: pointer;
-    border-bottom: 2px solid var(--text-dark);
-}
-.header-nav ul li a {    
-    font: 700 20px Archivo;
+    justify-content: flex-start;
     padding: 20px 10px;
-    color: var(--text-dark);
+    color: #9D1C30;
+    font: 500 14px Poppins;
+    border-bottom: 1px solid #fff;
 }
 
-
-.header-nav ul li:hover {
-    border-bottom: 2px solid var(--white);
-    box-shadow: inset 0 -40px 0 -1px var(--crimson);
-    transition: all .3s ease-in-out;
+.dropdown-content a:last-child {
+    border-bottom: 0;
 }
 
-.header-nav ul li a:hover {
-    color: var(--white);
+.dropdown-content a:hover {
+    font-weight: 700;
+    color: #020202;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

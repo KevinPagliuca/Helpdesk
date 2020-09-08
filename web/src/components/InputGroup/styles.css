@@ -84,7 +84,7 @@
     left: 0;
     border: 0;
     border-radius: 10px;
-    border-left: 2px solid #F31212;
+    border-left: 3px solid #F31212;
     transition: border-left 0.2s;
 }
 
@@ -106,15 +106,24 @@
     border: 0;
     background: rgb(65, 61, 61);
     cursor: pointer;
-    transition: background 0.4s ease-out;
+    transition: background 0.2s ease-out;
+}
+
+.container-form .btnEntrar button:hover {    
+    background: rgb(44, 42, 42);
 }
 
 .container-form .btnEntrar button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    height: 100%;
     font: 700 18px Archivo;
     color: #F31212;
 }
 
 .container-form .btnEntrar button a:hover {
     color: var(--crimson);
+    transition: color .2s;
 }

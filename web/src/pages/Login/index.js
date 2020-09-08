@@ -97,7 +97,7 @@ function Home() {
                         </div>
 
                         <div className="btnEntrar">
-                            <button type="submit"><Link to="/myaccount">Entrar</Link></button>
+                            <button type="submit"><Link to="/wellcome">Entrar</Link></button>
                         </div>
                     </div>
                 </form>

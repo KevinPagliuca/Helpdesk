@@ -1,38 +1,38 @@
 import React from 'react';
-
-import logoImg from '../../assets/Logo.png';
-import userImg from '../../assets/User.png';
+import { FaSortDown, FaPlus, FaClipboardList, FaClipboard, FaClipboardCheck } from 'react-icons/fa';
 
 import './styles.css';
 
-const Header = (props) => {
+const Header = () => {
 
     return (
         <header id="header-container">
+
             <div className="header-logo">
-                <img src={logoImg} alt="logo" />
+                <img src="https://www.kissnewyork.com.br/wp-content/uploads/2018/05/logo__.png" alt="logo-img" />
             </div>
 
-            <div className="header-nav">
+
+            <nav className="nav-container">
                 <ul>
-                    <li className="active"><a>Home</a></li>
-                    <li><a>Chamados</a></li>
-                    <li><a>Ajuda</a></li>
-                    <li><a>Contato</a></li>
+                    <li> <a href="#">Home</a></li>
+
+                    <div className="dropdown">
+                        <span>Chamados <FaSortDown /></span>
+                        <div className="dropdown-content">
+                            <a href="#"><FaPlus />Abrir chamado</a>
+                            <a href="#"><FaClipboard />Meus chamados </a>
+                            <a href="#"><FaClipboardList />Todos os chamados</a>
+                            <a href="#"><FaClipboardCheck />Chamados concluídos</a>
+                        </div>
+                    </div>
+
+                    <li> <a href="#">Dúvidas</a></li>
+                    <li> <a href="#">Sugestões</a></li>
+                    <li> <a id="teste" href="#">Contato</a></li>
                 </ul>
-            </div>
+            </nav>
 
-            <div className="header-content">
-                <div className="infoUser">
-                    <strong>Kevin Pagliuca</strong>
-                    <p>kevin.pagliuca@imbecor.com</p>
-                    <p>Estagiário de TI</p>
-                </div>
-
-                <div className="imgUser">
-                    <img src={userImg} alt="imgUser" />
-                </div>
-            </div>
         </header>
     );
 }

@@ -13,7 +13,7 @@
     width: 50vw;
     height: 100vh;
     color: var(--white);
-    background: url('../../assets/background-primary.png') 100% / cover fixed, rgb(28, 26, 31);
+    background: rgb(28, 26, 31);
 }
 
 #page-home .home-container {

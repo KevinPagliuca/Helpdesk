@@ -1,17 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Login from './pages/Login';
 import Register from './pages/Register';
-import Myaccount from './pages/Myaccount';
+import Wellcome from './pages/Wellcome';
+import Initial from './pages/Initial';
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter>      
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Login} />
         <Route path="/register" exact component={Register} />
-        <Route path="/myaccount" exact component={Myaccount} />
+        <Route path="/wellcome" exact component={Wellcome} />
+        <Route path="/home" exact component={Initial} />
       </Switch>
     </BrowserRouter>
   );
