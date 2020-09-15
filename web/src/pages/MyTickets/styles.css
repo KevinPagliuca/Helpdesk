@@ -1,0 +1,84 @@
+#mytickets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#mytickets .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.container .titleTxt {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 5px;
+    max-width: 850px;
+}
+
+.container .titleTxt p {
+    color: #fff;
+    font: 500 20px Poppins;
+}
+
+.container .titleTxt p strong {
+    font: 700 24px Poppins;
+    color: #F31212;
+}
+
+.container .titleTxt h3 {
+    color: #ffffff;
+    font: 500 20px Poppins;
+}
+
+.container .table-fill {
+    border-collapse: collapse;
+    background: rgb(27, 23, 23);
+    border-radius: 8px;
+    margin-top: 20px;
+    max-width: 850px;
+    width: 100%;
+}
+
+.container .table-fill thead tr th {
+    background: #f0f0f0;
+    color: #F31212;
+    border-right: 2px solid #5a5a5a;
+    border-bottom: 4px solid #5a5a5a;
+    padding: 15px;
+    font: 700 18px Poppins;
+}
+
+.container .table-fill thead tr th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+.container .table-fill thead tr th:last-child {
+    border-radius: 0 8px 0 0;
+    border-right: 0;
+}
+
+.container .table-fill tbody tr td {
+    padding: 15px 30px;
+    border-right: 2px solid #5a5a5a;
+    border-bottom: 2px solid #5a5a5a;
+    font: 500 14px Poppins;
+}
+
+.container .table-fill tbody tr td:last-child {
+    border-right: 0;
+}
+
+.container .table-fill tbody tr:last-child td {
+    border-bottom: 0;
+}

@@ -14,7 +14,7 @@ a {
   color: var(--white);
 }
 
-body {
+html, body {
   color: var(--white);
   background: var(--background-body);
   font-family: 'roboto', sans-serif;

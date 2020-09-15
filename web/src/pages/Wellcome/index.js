@@ -31,15 +31,15 @@ const Wellcome = () => {
         <div className="buttons-container">
 
           <div className="btnHome">
-            <button className="button"><FaHome /><Link to="/">Página inicial</Link></button>
+            <button className="button"><FaHome /><Link to="/home">Página inicial</Link></button>
           </div>
 
           <div className="btnView">
-            <button className="button"><FaClipboardList /><Link to="/">Visualizar chamados</Link></button>
+            <button className="button"><FaClipboardList /><Link to="/alltickets">Visualizar chamados</Link></button>
           </div>
 
           <div className="btnNew">
-            <button className="button"><FaPlus /><Link to="/">Abrir um chamado</Link></button>
+            <button className="button"><FaPlus /><Link to="/newticket">Abrir um chamado</Link></button>
           </div>
 
         </div>

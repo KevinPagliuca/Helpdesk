@@ -1,0 +1,103 @@
+#newticket .container .form-control, #newticket .container .form-control .form-group, #newticket .container, #newticket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#newticket .container {
+    padding: 10px 80px;
+}
+
+#newticket .container .titletxt {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#newticket .container .titletxt h1 {
+    font: 600 32px Poppins;
+    color: #fff;
+}
+
+#newticket .container .titletxt p {
+    font: 500 12px Poppins;
+    color: #d5d5d5;
+}
+
+#newticket .container .form-control {
+    margin-top: 20px;
+    max-width: 500px;
+    width: 100%;
+}
+
+#newticket .container .form-control .form-group {
+    width: 100%;
+}
+
+#newticket .container .form-control .form-group label {
+    width: 100%;
+    line-height: 24px;
+    font: 500 16px Poppins;
+    color: #d5d5d5;
+    padding-left: 3px;
+    margin-bottom: 10px;
+}
+
+#newticket .container .form-control .form-group input, #newticket .container .form-control .form-group select, #newticket .container .form-control .form-group textarea {
+    width: 100%;
+    height: 54px;
+    padding: 10px 25px;
+    font: 500 14px Archivo;
+    border-radius: 8px;
+    border: 2px solid #2f2f2f;
+    background: rgb(27, 23, 23);
+    color: #d5d5d5;
+    margin-bottom: 20px;
+}
+
+#newticket .container .form-control .form-group .container-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+#newticket .container .form-control .form-group .container-group .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 20px;
+}
+
+#newticket .container .form-control .form-group .container-group .content:last-child {
+    margin-right: 0;
+}
+
+#newticket .container .form-control .form-group textarea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    padding: 25px;
+    resize: none;
+    min-height: 110px;
+}
+
+#newticket .container .form-control .form-group textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#newticket .container .form-control .form-group .btnSend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 54px;
+    cursor: pointer;
+    font: 600 20px Poppins;
+}

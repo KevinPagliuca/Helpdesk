@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaSortDown, FaPlus, FaClipboardList, FaClipboard, FaClipboardCheck } from 'react-icons/fa';
 
 import './styles.css';
 
-const Header = () => {
+const Header = ({ optionAcitaved }) => {
 
     return (
         <header id="header-container">
@@ -15,21 +16,46 @@ const Header = () => {
 
             <nav className="nav-container">
                 <ul>
-                    <li> <a href="#">Home</a></li>
+                    <li> {optionAcitaved === 0 ?
+                        <Link className="active" to="/home">Home</Link>
+                        :
+                        <Link to="/home">Home</Link>
+                    }
+                    </li>
 
                     <div className="dropdown">
-                        <span>Chamados <FaSortDown /></span>
+                        <p>Chamados <FaSortDown /></p>
                         <div className="dropdown-content">
-                            <a href="#"><FaPlus />Abrir chamado</a>
-                            <a href="#"><FaClipboard />Meus chamados </a>
-                            <a href="#"><FaClipboardList />Todos os chamados</a>
-                            <a href="#"><FaClipboardCheck />Chamados concluídos</a>
+                            <Link className="button" to="/newticket"><FaPlus />Abrir chamado</Link>
+                            <Link className="button" to="/mytickets"><FaClipboard />Meus chamados </Link>
+                            <Link className="button" to="/alltickets"><FaClipboardList />Todos os chamados</Link>
+                            <Link className="button" to="/closedtickets"><FaClipboardCheck />Chamados concluídos</Link>
                         </div>
                     </div>
 
-                    <li> <a href="#">Dúvidas</a></li>
-                    <li> <a href="#">Sugestões</a></li>
-                    <li> <a id="teste" href="#">Contato</a></li>
+                    <li>
+                        {optionAcitaved === 2 ?
+                            <Link to="/questions" className="active">Dúvidas</Link>
+                            :
+                            <Link to="/questions">Dúvidas</Link>
+                        }
+                    </li>
+
+                    <li>{optionAcitaved === 3 ?
+                        <Link to="/suggestions" className="active">Sugestões</Link>
+                        :
+                        <Link to="/suggestions">Sugestões</Link>
+                    }
+
+                    </li>
+
+                    <li>
+                        {optionAcitaved === 4 ?
+                            <Link to="/contact" className="active">Contate-nos</Link>
+                            :
+                            <Link to="/contact">Contate-nos</Link>
+                        }
+                    </li>
                 </ul>
             </nav>
 
