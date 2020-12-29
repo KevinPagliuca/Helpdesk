@@ -1,0 +1,30 @@
+#register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 15px 0;
+}
+
+#register form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 80px;    
+    background: rgb(28, 28, 28);
+    box-shadow: 0 0 15px rgb(24, 25, 26);
+    border-radius: 12px;
+    color: #fff;
+}
+
+#register form .input-block { 
+    width: 450px;
+}
+
+#register form h3 {
+    font: 500 34px Poppins;
+}
+
+#register form select {
+    margin-bottom: 10px;
+}

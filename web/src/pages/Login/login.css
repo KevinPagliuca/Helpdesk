@@ -1,0 +1,39 @@
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 30px 0;    
+}
+
+#login form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 80px;    
+    background: rgb(28, 28, 28);
+    box-shadow: 0 0 15px rgb(24, 25, 26);
+    border-radius: 12px;
+    color: #fff;
+}
+
+#login form h3 {
+    font: 500 34px Poppins;
+}
+
+.more-infos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font: 500 13px Poppins;
+}
+
+.more-infos a {
+    font: 600 14px Poppins;
+    color: #aaa;
+}
+
+.more-infos a:hover {
+    color: #f31212;
+    transition: color .3s;
+}

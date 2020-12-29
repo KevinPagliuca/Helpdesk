@@ -1,0 +1,33 @@
+.input-block {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+.input-block label {
+    font: 500 16px Poppins;
+    color: #bbb;
+}
+
+.input-block > label + input {
+    margin-top: 10px;
+}
+
+.input-block input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    
+    font: 400 14px Poppins;
+    box-shadow: 0 0 5px rgb(33, 34,34);
+    background: rgb(26, 26, 34);
+    color: #fff;
+}
+
+.input-block input:focus {
+    border: 2px solid rgb(0, 153, 255);    
+    box-shadow: 0 0 8px rgb(0, 153, 255);
+    transition: all 0.3s ease-in-out;
+}

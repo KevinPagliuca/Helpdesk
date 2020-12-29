@@ -26,7 +26,7 @@ module.exports = {
 
         const serializedUser = {
             ...user,
-            image_url: `http://192.168.230.115:3333/uploads/user-imgs/${user.avatar}`,
+            image_url: `http://localhost:3333/uploads/user-imgs/${user.avatar}`,
         };
 
         return res.json(serializedUser);
@@ -205,7 +205,7 @@ module.exports = {
 
                 const serializedUser = {
                     ...consult,
-                    image_url: `http://192.168.230.115:3333/uploads/user-imgs/${consult.avatar}`,
+                    image_url: `http://localhost:3333/uploads/user-imgs/${consult.avatar}`,
                 };
                 return res.json(serializedUser);
             } else {

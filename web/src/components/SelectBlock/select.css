@@ -1,0 +1,31 @@
+.select-block {
+    display: flex;
+    flex-direction: column;    
+    font: 500 16px Poppins;
+    margin-top: 10px;
+}
+
+.select-block label {
+    font: 500 16px Poppins;    
+    color: #bbb;
+}
+
+.select-block > label + select {
+    margin-top: 10px;
+}
+
+.select-block select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    background: rgb(26, 26, 36);
+    color: #fff;
+    font: 400 14px Poppins;
+}
+
+.select-block select:focus {
+    border: 2px solid rgb(0, 153, 255);    
+    box-shadow: 0 0 8px rgb(0, 153, 255);
+    transition: all 0.3s ease-in-out;
+}
