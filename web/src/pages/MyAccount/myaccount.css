@@ -1,0 +1,66 @@
+#myaccount {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+#myaccount .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1300px;
+    width: 100%;
+    margin: 40px 0;   
+    background: rgb(28, 28, 28);
+    box-shadow: 0 0 15px rgb(24, 25, 26);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+#myaccount .container .userdata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+#myaccount .container .userdata h3 {
+    font: 500 26px Poppins;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+}
+#myaccount .container .userdata .input-block {
+    margin-bottom: 10px;
+}
+
+#myaccount .container .account-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 74px;
+}
+
+#myaccount .container .account-svg img {
+    height: 75% !important;
+    width: 75% !important;
+}
+
+#myaccount .button-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 50px;
+}
+
+#myaccount .button-container button svg {
+    position: absolute;
+    right: 50px;
+}
