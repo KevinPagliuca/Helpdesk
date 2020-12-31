@@ -17,7 +17,6 @@ routes.post('/register/admin', UserController.createAdmin);
 routes.post('/newticket', TicketsController.create);
 routes.post('/ticket/:id', ReplysController.create);
 
-
 routes.get('/agents', UserController.agents);
 routes.get('/alltickets', TicketsController.index);
 routes.get('/ticket/:id', TicketsController.show);
@@ -27,7 +26,6 @@ routes.get('/assignToAdmins', TicketsController.AssignToAdmins);
 routes.get('/inProgress', TicketsController.InProgress);
 
 routes.get('/usersList', UserController.index);
-
 
 routes.put('/updateUser', upload.single('avatar'), UserController.update);
 routes.put('/ticketEdit/:id', TicketsController.ticketEdit);

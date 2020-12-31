@@ -67,7 +67,7 @@ const MyAccount = () => {
             localStorage.setItem('user_dept', res.data.dept);
             localStorage.setItem('user_role', res.data.role);
             if (SelectedFile) {
-                sessionStorage.setItem('image_url', 'http://192.168.230.115:3333/uploads/user-imgs/' + res.data.avatar);
+                sessionStorage.setItem('image_url', 'http://localhost:3333/uploads/user-imgs/' + res.data.avatar);
             }
             alert('Alterado com sucesso!');
             window.location.reload();

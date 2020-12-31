@@ -63,6 +63,7 @@ module.exports = {
         const DataHoje = date.toLocaleString();
 
         if (!consult) {
+
             await bcrypt.hash(password, saltRounds, async (err, hash) => {
                 const insertUser = await connection('users').insert({
                     name,

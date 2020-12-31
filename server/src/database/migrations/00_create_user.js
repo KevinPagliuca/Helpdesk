@@ -1,10 +1,8 @@
-const knex = require('knex');
-
 exports.up = function(knex){
     return knex.schema.createTable('users', table => {
         table.increments('id').primary();
         table.string('name').notNullable();
-        table.string('email').notNullable();
+        table.string('email').notNullable().unique('email');
         table.string('dept').notNullable();
         table.string('role').notNullable();
         table.string('password').notNullable();        

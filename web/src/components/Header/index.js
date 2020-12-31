@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import logo from '../../assets/logo.png';
+
 import './header.css';
 
 const Header = () => {
@@ -18,7 +20,7 @@ const Header = () => {
         <header id="header">
             <nav className="navbar">
                 <Link className="logo" to={admin ? "/admin" : "/myaccount"}>
-                    <h1>Helpdesk</h1>
+                    <img src={logo} alt="logoimg" />
                 </Link>
 
                 <div className="nav-container">

@@ -1,5 +1,3 @@
-const knex = require('knex');
-
 exports.up = function (knex) {
     return knex.schema.createTable('replys_tickets', table => {
         table.increments('id').primary();
