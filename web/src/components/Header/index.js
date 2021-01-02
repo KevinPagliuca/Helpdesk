@@ -41,8 +41,8 @@ const Header = () => {
                                 <Link to="/admin">Administração</Link>
                             }
                             <Link to="/myaccount">Minha conta</Link>
-                            <Link to="/suggest">Sugestões</Link>
-                            <Link to="/faq">Ajuda</Link>
+                            <Link to="#suggest" className="disabled-link">Sugestões</Link>
+                            <Link to="#faq" className="disabled-link">Ajuda</Link>
                             <Link to="/" onClick={handleLogout}>Sair</Link>
                         </div>
                     </div>
