@@ -1,0 +1,73 @@
+#backdrop {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    transition: all .5s 0ms ease-in-out;
+}
+
+.translate-out {
+    transform: translateY(-100%);
+    opacity: 0.7;
+    z-index: 1;
+    transition: all .5s 0ms ease-in-out;
+}
+
+.translate {
+    transform: translateY(0%);
+    height: 100vh;
+    opacity: 1;
+    z-index: 1;
+    transition: all .5s 0ms ease-in-out;
+}
+
+.modal-container .modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    height: 400px;
+    background: rgb(28, 28, 28);
+    box-shadow: 0 0 8px rgb(24, 25, 26);
+    border: 0;
+    outline: 0;
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px 65px;
+    overflow: scroll;
+}
+
+.modal-content form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal-content form label {
+    font: 500 18px Poppins;
+}
+
+.modal-content form textarea {
+    background: rgb(28, 28, 28);
+    box-shadow: 0 0 8px rgb(0, 0, 0);
+    border: 1px solid rgb(14,14,14);   
+}
+
+.modal-content form section {
+    width: 100%;
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none;
+}

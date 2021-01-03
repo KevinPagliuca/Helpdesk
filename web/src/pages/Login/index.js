@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import InputBlock from '../../components/InputBlock';
 
 import api from '../../services/api';
@@ -9,6 +9,7 @@ import './login.css';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const loginIsTrue = sessionStorage.getItem('status');
 
     const history = useHistory();
 
@@ -38,42 +39,49 @@ const Login = () => {
         })
     }
 
-    return (
-        <div id="login">
-            <form onSubmit={handleLogin}>
-                <h3>Fazer Login</h3>
-
-                <InputBlock
-                    id="email"
-                    type="text"
-                    autoComplete="off"
-                    label="E-mail"
-
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                />
-
-                <InputBlock
-                    id="password"
-                    type="password"
-                    autoComplete="off"
-                    label="Senha"
-
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
-                />
-
-                <div className="button-container">
-                    <button type="submit">Entrar</button>
-                </div>
-
-                <div className="more-infos">
-                    <p>Ainda não tem conta ? </p>
-                    <Link to="register">Cadastrar-se</Link>
-                </div>
-            </form>
-        </div>
-    );
+    if(loginIsTrue !== "1") {
+        return (
+            <div id="login">
+                <form onSubmit={handleLogin}>
+                    <h3>Fazer Login</h3>
+    
+                    <InputBlock
+                        id="email"
+                        type="text"
+                        autoComplete="off"
+                        label="E-mail"
+    
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                    />
+    
+                    <InputBlock
+                        id="password"
+                        type="password"
+                        autoComplete="off"
+                        label="Senha"
+    
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
+    
+                    <div className="button-container">
+                        <button type="submit">Entrar</button>
+                    </div>
+    
+                    <div className="more-infos">
+                        <p>Ainda não tem conta ? </p>
+                        <Link to="register">Cadastrar-se</Link>
+                    </div>
+                </form>
+            </div>
+        );
+    } else {
+        return(
+            <Redirect to="/myaccount"/>
+        );
+    }
+   
 }
 
 export default Login;

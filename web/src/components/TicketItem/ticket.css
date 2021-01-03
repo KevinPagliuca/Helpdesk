@@ -68,7 +68,7 @@
 .content .info {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 10px 15px;
   width: 100%;
 }
@@ -78,7 +78,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
 }
 
 .content .info div>strong {

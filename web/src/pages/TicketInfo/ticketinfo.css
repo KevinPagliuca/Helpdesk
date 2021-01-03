@@ -1,0 +1,337 @@
+#ticket-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(37, 38, 39);
+    color: #fff;
+}
+
+#ticket-info .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1300px;
+    background: rgb(23, 24, 25);
+    box-shadow: 0 0 20px rgb(23, 24, 25);
+    border: 0;
+    border-radius: 12px;
+    padding: 50px 30px;
+    width: 100%;
+    margin: 40px 0;
+    color: #fff;
+}
+
+#ticket-info .content-ticket {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    background: rgb(28, 28, 28);
+    box-shadow: 0 0 20px rgb(15, 15, 15);
+    text-shadow: 0 0 1.5px rgb(37, 38, 39);
+    border-radius: 8px;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+}
+
+#ticket-info .content-ticket .footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    font: 400 14px Poppins;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+#ticket-info .content-ticket .footer label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 400 14px Poppins;
+    color: #bbb;
+}
+
+#ticket-info .content-ticket .footer label p {
+    margin-left: 5px;
+    font: 600 13px Poppins;
+    color: #fff;
+}
+
+#ticket-info .header-ticket {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 2px solid #333;
+    font: 600 22px Poppins;
+}
+
+#ticket-info .header-ticket .btnEdit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 50%;
+    color: #f0f0f0;
+    background: rgb(37, 38, 39);
+    box-shadow: 0 0 8px rgb(37, 38, 39);
+}
+
+#ticket-info .header-ticket .btnEdit:hover {
+    background: rgb(0, 153, 255);
+    box-shadow: 0 0 10px rgb(0, 153, 255);
+    transition: all .3s ease-in-out;
+}
+
+#ticket-info .informations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0 15px;
+    border-bottom: 2px solid #333;
+    width: 100%;
+    height: 100%;
+}
+
+#ticket-info .informations>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 10px;
+}
+
+#ticket-info .informations>div:last-child {
+    margin-right: 0;
+}
+
+#ticket-info .description {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin: 15px 0;
+    width: 100%;
+    background: rgb(31, 31, 31);
+    box-shadow: 0 0 15px rgb(0, 0, 0, 0.4);
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+}
+
+#ticket-info .description strong {
+    font: 600 18px Poppins;
+    margin-bottom: 10px;
+}
+
+#ticket-info .read-only {
+    box-shadow: none !important;
+    background: transparent !important;
+    resize: none !important;
+    min-height: 150px !important;
+    height: 100% !important;
+    width: 100% !important;
+    text-align: justify !important;
+    line-height: 35px !important;
+    font: 400 15px Poppins !important;
+    color: #fff;
+    cursor: default;
+}
+
+#ticket-info .description textarea {
+    width: 100%;
+    padding: 20px 10px;
+    line-height: 24px;
+    min-height: 350px;
+    border: 0;
+    border-radius: 12px;
+    resize: vertical;
+    font: 400 14px Poppins;
+    text-align: justify;
+    line-height: 35px;
+    text-shadow: 0 0 2px rgb(37, 38, 39);
+    background: #f0f0f0;
+    overflow: scroll;
+    margin-bottom: 20px;
+}
+
+#ticket-info .description textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#ticket-info #subject {
+    margin-right: 10px;
+}
+
+#ticket-info input, #ticket-info select {
+    width: 100%;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 7px rgb(0, 153, 255);
+    padding: 8px 12px;
+    font: 400 14px Poppins;
+    text-shadow: 0 0 2px rgb(37, 38, 39);
+}
+
+#ticket-info .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 15px 0;
+}
+
+#ticket-info .actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 12px;
+    width: 300px;
+    border-radius: 8px;
+    color: #fff;
+    background: rgb(37, 38, 39);
+    box-shadow: 0 0 15px rgb(0, 0, 0, 0.4);
+    font: 600 14px Poppins;
+}
+
+#ticket-info .actions button>svg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 12px;
+    color: rgb(0, 153, 255);
+}
+
+#ticket-info .actions .btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#ticket-info .actions .between {
+    justify-content: space-around !important;
+}
+
+#ticket-info .actions .between button.animated {
+    animation: bounce 3s infinite;
+}
+
+#ticket-info .actions .between button.animated:hover {
+    background: rgb(0, 153, 255);
+    box-shadow: 0 0 10px rgb(0, 153, 255);
+    color: #f0f0f0;
+    animation: none;
+}
+
+#ticket-info .actions button:hover {
+    background: rgb(0, 153, 255);
+    box-shadow: 0 0 10px rgb(0, 153, 255);
+    transition: all .3s ease-in-out;
+}
+
+#ticket-info .actions button:hover svg {
+    color: #f0f0f0;
+    transition: color .3s ease-in-out;
+}
+
+#ticket-info .reply-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#ticket-info .reply-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+    max-width: 750px;
+    width: 100%;
+    background: rgb(28, 28, 28);
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+    min-height: 115px;
+    border-radius: 8px;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+}
+
+#ticket-info .reply-container:nth-child(odd) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+#ticket-info .reply-content .reply-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: 2px solid #333;
+    margin-bottom: 8px;
+}
+
+#ticket-info .reply-content .reply-header p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 400 13px Poppins;
+    color: #777777;
+    text-shadow: 0 0 0;
+}
+
+#ticket-info .reply-content .reply-header p svg {
+    margin-right: 8px;
+    color: #777777;
+    font-size: 18px;
+}
+
+#ticket-info .read-only::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes shine {
+    from {
+        box-shadow: 0 0 30px 4px rgb(37, 38, 39);
+        transform: scale(1.05);
+    }
+    to {
+        box-shadow: 0 0 0 0 rgb(0, 0, 0, 0);
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -webkit-transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-10px);
+    }
+    60% {
+        -webkit-transform: translateY(-5px);
+    }
+}

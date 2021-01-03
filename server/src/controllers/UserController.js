@@ -36,7 +36,6 @@ module.exports = {
 
         const consultarAgentes = await connection('users')
             .select('id', 'name')
-            .where('name', '!=', 'Administrador')
             .where('permission', 1)
 
         if (!consultarAgentes) {
