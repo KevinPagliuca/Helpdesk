@@ -5,8 +5,6 @@
     position: relative;
     min-height: 100vh;
     width: 100%;
-    background: rgb(37, 38, 39);
-    color: #fff;
 }
 
 #ticket-info .container {
@@ -15,8 +13,8 @@
     justify-content: center;
     flex-direction: column;
     max-width: 1300px;
-    background: rgb(23, 24, 25);
-    box-shadow: 0 0 20px rgb(23, 24, 25);
+    background: rgb(28, 28, 28);
+    box-shadow: 0 0 15px rgb(24, 25, 26);
     border: 0;
     border-radius: 12px;
     padding: 50px 30px;
@@ -33,13 +31,50 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
-    background: rgb(28, 28, 28);
-    box-shadow: 0 0 20px rgb(15, 15, 15);
-    text-shadow: 0 0 1.5px rgb(37, 38, 39);
+    background: rgb(32, 32, 32);
+    box-shadow: 0 0 12px rgb(16, 16, 16);
     border-radius: 8px;
-    border: 0;
-    outline: 0;
     padding: 10px 20px;
+}
+
+#ticket-info .header-ticket {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 2px solid #333;
+    font: 600 24px Poppins;
+    position: relative;
+}
+
+#ticket-info .header-ticket label {
+    font: 600 24px Poppins;
+    margin-bottom: 10px;
+}
+
+#ticket-info .header-ticket .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#ticket-info .header-ticket .icons .btnEdit {
+    border-radius: 50%;
+    padding: 10px;
+    color: #f0f0f0;
+    background: #333;
+    box-shadow: 0 0 12px rgb(16, 16, 16);
+}
+
+#ticket-info .header-ticket .btnEdit:hover {
+    background: rgb(0, 153, 255);
+    box-shadow: 0 0 10px rgb(0, 153, 255);
+    transition: all .3s ease-in-out;
 }
 
 #ticket-info .content-ticket .footer {
@@ -67,33 +102,6 @@
     color: #fff;
 }
 
-#ticket-info .header-ticket {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px 0;
-    border-bottom: 2px solid #333;
-    font: 600 22px Poppins;
-}
-
-#ticket-info .header-ticket .btnEdit {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 50%;
-    color: #f0f0f0;
-    background: rgb(37, 38, 39);
-    box-shadow: 0 0 8px rgb(37, 38, 39);
-}
-
-#ticket-info .header-ticket .btnEdit:hover {
-    background: rgb(0, 153, 255);
-    box-shadow: 0 0 10px rgb(0, 153, 255);
-    transition: all .3s ease-in-out;
-}
-
 #ticket-info .informations {
     display: flex;
     align-items: center;
@@ -106,11 +114,16 @@
 
 #ticket-info .informations>div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     width: 100%;
     margin-right: 10px;
+}
+
+#ticket-info .informations p {
+    width: 100%;
+    overflow: hidden;
 }
 
 #ticket-info .informations>div:last-child {
@@ -125,8 +138,7 @@
     padding: 10px 20px;
     margin: 15px 0;
     width: 100%;
-    background: rgb(31, 31, 31);
-    box-shadow: 0 0 15px rgb(0, 0, 0, 0.4);
+    box-shadow: 0 0 12px rgb(16, 16, 16);
     color: #fff;
     border: 0;
     border-radius: 6px;
@@ -141,49 +153,65 @@
     box-shadow: none !important;
     background: transparent !important;
     resize: none !important;
-    min-height: 150px !important;
+    min-height: 250px !important;
     height: 100% !important;
     width: 100% !important;
     text-align: justify !important;
     line-height: 35px !important;
     font: 400 15px Poppins !important;
+    border: 0 !important;
     color: #fff;
     cursor: default;
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(24, 25, 26);
+    border: 1px solid #333;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 25px;
+}
+
 #ticket-info .description textarea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 20px 10px;
-    line-height: 24px;
-    min-height: 350px;
-    border: 0;
-    border-radius: 12px;
+    min-height: 300px;
+    padding: 20px;
+    border: 2px solid #333;
     resize: vertical;
-    font: 400 14px Poppins;
+    border-radius: 12px;
+    background: rgb(26, 26, 34);
+    box-shadow: 0 0 12px rgb(16, 16, 16);
+    color: #fff;
     text-align: justify;
-    line-height: 35px;
-    text-shadow: 0 0 2px rgb(37, 38, 39);
-    background: #f0f0f0;
-    overflow: scroll;
+    font: 400 14px Poppins;
     margin-bottom: 20px;
-}
-
-#ticket-info .description textarea::-webkit-scrollbar {
-    display: none;
-}
-
-#ticket-info #subject {
-    margin-right: 10px;
 }
 
 #ticket-info input, #ticket-info select {
     width: 100%;
-    border: 0;
-    border-radius: 8px;
-    box-shadow: 0 0 7px rgb(0, 153, 255);
-    padding: 8px 12px;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 6px;
     font: 400 14px Poppins;
-    text-shadow: 0 0 2px rgb(37, 38, 39);
+    background: rgb(26, 26, 34);
+    box-shadow: 0 0 12px rgb(16, 16, 16);
+    color: #fff;
+}
+
+#ticket-info input:focus, #ticket-info select:focus, #ticket-info textarea:focus {
+    border: 2px solid rgb(0, 153, 255);    
+    box-shadow: 0 0 8px rgb(0, 153, 255);
+    transition: all 0.3s ease-in-out;
 }
 
 #ticket-info .actions {
@@ -204,7 +232,7 @@
     border-radius: 8px;
     color: #fff;
     background: rgb(37, 38, 39);
-    box-shadow: 0 0 15px rgb(0, 0, 0, 0.4);
+    box-shadow: 0 0 12px rgb(16, 16, 16);
     font: 600 14px Poppins;
 }
 
@@ -265,18 +293,20 @@
     justify-content: flex-start;
     flex-direction: column;
     margin-top: 20px;
-    max-width: 750px;
     width: 100%;
-    background: rgb(28, 28, 28);
-    box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+    background: rgb(32, 32, 32);
+    box-shadow: 0 0 12px rgb(16, 16, 16);
     min-height: 115px;
     border-radius: 8px;
-    border: 0;
-    outline: 0;
     padding: 10px 20px;
 }
 
-#ticket-info .reply-container:nth-child(odd) {
+#ticket-info .reply-container:nth-child(odd) .reply-content {
+    background: rgb(26, 26, 34);
+    box-shadow: 0 0 12px rgb(16, 16, 16);
+}
+
+#ticket-info .reply-container {
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -307,21 +337,6 @@
     margin-right: 8px;
     color: #777777;
     font-size: 18px;
-}
-
-#ticket-info .read-only::-webkit-scrollbar {
-    display: none;
-}
-
-@keyframes shine {
-    from {
-        box-shadow: 0 0 30px 4px rgb(37, 38, 39);
-        transform: scale(1.05);
-    }
-    to {
-        box-shadow: 0 0 0 0 rgb(0, 0, 0, 0);
-        transform: scale(1);
-    }
 }
 
 @keyframes bounce {

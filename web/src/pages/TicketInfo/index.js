@@ -11,7 +11,6 @@ import api from '../../services/api';
 const TicketInfo = () => {
     const [ticket, setTicket] = useState([]);
     const [replys, setReplys] = useState([]);
-    const [userEdit, setUserEdit] = useState(false);
     const [agents, setAgents] = useState([]);
 
     const [tmpSubject, setTmpSubject] = useState('');
@@ -23,12 +22,16 @@ const TicketInfo = () => {
     const [tmpDescription, setTmpDescription] = useState('');
     const [tmpStatus, setTmpStatus] = useState('');
 
+    const [userEdit, setUserEdit] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
+
     const { id } = useParams();
 
     const user_id = localStorage.getItem('user_id');
     const user_name = localStorage.getItem('user_name');
     const admin = sessionStorage.getItem('admin');
+
+    const datePicker = new Date().toISOString().split("T")[0];
 
     useEffect(() => {
         api.get(`ticket/${id}`)
@@ -38,7 +41,21 @@ const TicketInfo = () => {
             })).catch((err) => {
                 alert(err);
             });
-    }, [id]);
+
+        localStorage.setItem('tmpSubject', ticket.subject);
+        localStorage.setItem('tmpAssignTo', ticket.assignTo);
+        localStorage.setItem('tmpPriority', ticket.priority);
+        localStorage.setItem('tmpCategory', ticket.category);
+        localStorage.setItem('tmpDueDate', ticket.duedate);
+        if (localStorage.getItem('tmpEstimated') === 'IT Only') {
+            localStorage.setItem('tmpEstimated', '');
+        } else {
+            localStorage.setItem('tmpEstimated', ticket.estimated);
+        }
+        localStorage.setItem('tmpDescription', ticket.description);
+        localStorage.setItem('tmpStatus', ticket.status);
+
+    }, [ticket, id]);
 
     async function handleSaveChanges(e) {
         e.preventDefault();
@@ -59,9 +76,10 @@ const TicketInfo = () => {
                 admin
             }
         }).then((res) => {
-            alert('Alterado com sucesso!')
+
+            alert('Alterado com sucesso!');
         }).catch((err) => {
-            alert('algo deu errado, verifique e tente novamente!' + (err))
+            alert('algo deu errado, verifique e tente novamente!' + (err));
         });
         setUserEdit(false);
     }
@@ -89,26 +107,13 @@ const TicketInfo = () => {
             document.getElementById("description").classList.remove('active');
         }
 
-
-    }, [userEdit, ticket]);
+    }, [userEdit]);
 
 
     function handlTicketEdit(e) {
         e.preventDefault();
         setUserEdit(true);
-        localStorage.setItem('tmpSubject', ticket.subject);
-        localStorage.setItem('tmpAssignTo', ticket.assignTo);
-        localStorage.setItem('tmpPriority', ticket.priority);
-        localStorage.setItem('tmpCategory', ticket.category);
-        localStorage.setItem('tmpDueDate', ticket.duedate);
-        if (localStorage.getItem('tmpEstimated') === 'IT Only') {
-            localStorage.setItem('tmpEstimated', '');
-        } else {
-            localStorage.setItem('tmpEstimated', ticket.estimated);
-        }
-        localStorage.setItem('tmpDescription', ticket.description);
-        localStorage.setItem('tmpStatus', ticket.status);
-    }   
+    }
 
     function handleModalAppear(e) {
         e.preventDefault();
@@ -122,15 +127,15 @@ const TicketInfo = () => {
     async function sendComment(send) {
         if (send === true) {
             await api.get(`ticket/${id}`)
-            .then((res => {
-                setReplys(res.data[1]);
-            })).catch((err) => {
-                alert(err);
-            });
+                .then((res => {
+                    setReplys(res.data[1]);
+                })).catch((err) => {
+                    alert(err);
+                });
 
             setIsClicked(false);
         }
-        
+
     }
 
     function handleCancel(e) {
@@ -148,8 +153,10 @@ const TicketInfo = () => {
                         {userEdit === false ?
                             <strong>{ticket.subject}</strong>
                             :
-                            <input id="subject" type="text" value={tmpSubject} onChange={e => setTmpSubject(e.target.value)} />
-
+                            <>
+                                <label htmlFor="subject">Assunto</label>
+                                <input id="subject" type="text" value={tmpSubject} onChange={e => setTmpSubject(e.target.value)} />
+                            </>
                         }
                         <div className="icons">
                             {Number(user_id) === ticket.user_id || admin === 'true' ?
@@ -218,7 +225,7 @@ const TicketInfo = () => {
                                     type="date"
                                     value={tmpDuedate}
                                     onChange={e => setTmpDueDate(e.target.value)}
-                                    min="2020-11-01" max="2030-12-31"
+                                    min={datePicker} max="2030-12-31"
                                 />
                             }
                         </div>
@@ -229,11 +236,11 @@ const TicketInfo = () => {
                                     type="date"
                                     value={tmpItEstimated}
                                     onChange={e => setTmpItEstimated(e.target.value)}
-                                    min="2020-11-01" max="2030-12-31"
+                                    min={datePicker} max="2030-12-31"
                                 />
                                 :
                                 <p>
-                                    {ticket.estimated}
+                                    {tmpItEstimated === '' ? 'IT Only' : tmpItEstimated || tmpItEstimated === undefined ? 'IT Only' : tmpItEstimated}
                                 </p>
                             }
                         </div>
@@ -246,11 +253,11 @@ const TicketInfo = () => {
                                     value={tmpStatus}
                                     onChange={e => setTmpStatus(e.target.value)}
                                 >
-                                    <option value="Novo">Novo</option>
-                                    <option value="Em aberto">Em aberto</option>
-                                    <option value="Em andamento...">Em andamento...</option>
-                                    <option value="Aguardando Matriz/Usuário">Aguardando Matriz/Usuário</option>
-                                    <option value="Concluído">Concluído</option>
+                                    <option>Novo</option>
+                                    <option>Em aberto</option>
+                                    <option>Em andamento...</option>
+                                    <option>Aguardando Usuário...</option>
+                                    <option>Concluído</option>
                                 </select>
                             }
 
