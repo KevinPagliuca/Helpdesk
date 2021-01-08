@@ -8,6 +8,8 @@ import ModalReply from '../../components/Modals/ReplyModal';
 import './ticketinfo.css';
 import api from '../../services/api';
 
+import { convertDate, convertDateTime } from '../../utils';
+
 const TicketInfo = () => {
     const [ticket, setTicket] = useState([]);
     const [replys, setReplys] = useState([]);
@@ -34,14 +36,19 @@ const TicketInfo = () => {
     const datePicker = new Date().toISOString().split("T")[0];
 
     useEffect(() => {
-        api.get(`ticket/${id}`)
-            .then((res => {
-                setTicket(res.data[0]);
-                setReplys(res.data[1]);
-            })).catch((err) => {
-                alert(err);
-            });
+        async function loadTickets() {
+            api.get(`ticket/${id}`)
+                .then((res => {
+                    setTicket(res.data[0]);
+                    setReplys(res.data[1]);
+                })).catch((err) => {
+                    alert(err);
+                });
+        }
+        loadTickets();
+    }, [userEdit, id]);
 
+    useEffect(() => {
         localStorage.setItem('tmpSubject', ticket.subject);
         localStorage.setItem('tmpAssignTo', ticket.assignTo);
         localStorage.setItem('tmpPriority', ticket.priority);
@@ -54,8 +61,7 @@ const TicketInfo = () => {
         }
         localStorage.setItem('tmpDescription', ticket.description);
         localStorage.setItem('tmpStatus', ticket.status);
-
-    }, [ticket, id]);
+    }, [ticket]);
 
     async function handleSaveChanges(e) {
         e.preventDefault();
@@ -76,7 +82,6 @@ const TicketInfo = () => {
                 admin
             }
         }).then((res) => {
-
             alert('Alterado com sucesso!');
         }).catch((err) => {
             alert('algo deu errado, verifique e tente novamente!' + (err));
@@ -108,12 +113,6 @@ const TicketInfo = () => {
         }
 
     }, [userEdit]);
-
-
-    function handlTicketEdit(e) {
-        e.preventDefault();
-        setUserEdit(true);
-    }
 
     function handleModalAppear(e) {
         e.preventDefault();
@@ -160,7 +159,7 @@ const TicketInfo = () => {
                         }
                         <div className="icons">
                             {Number(user_id) === ticket.user_id || admin === 'true' ?
-                                <button className="btnEdit" onClick={handlTicketEdit}><FaPen size={20} /></button>
+                                <button className="btnEdit" onClick={() => setUserEdit(true)}><FaPen size={20} /></button>
                                 :
                                 null
                             }
@@ -219,7 +218,7 @@ const TicketInfo = () => {
                         <div className="dueDate">
                             <strong>Vencimento</strong>
                             {userEdit === false ?
-                                <p>{ticket.duedate}</p>
+                                <p>{convertDate(ticket.duedate)}</p>
                                 :
                                 <input
                                     type="date"
@@ -240,7 +239,7 @@ const TicketInfo = () => {
                                 />
                                 :
                                 <p>
-                                    {tmpItEstimated === '' ? 'IT Only' : tmpItEstimated || tmpItEstimated === undefined ? 'IT Only' : tmpItEstimated}
+                                    {tmpItEstimated === '' || tmpItEstimated === undefined ? 'IT Only' : convertDate(ticket.estimated)}
                                 </p>
                             }
                         </div>
@@ -311,7 +310,7 @@ const TicketInfo = () => {
                         <div className="reply-content">
                             <div className="reply-header">
                                 <strong>{reply.user_reply}</strong>
-                                <p><FaRegClock /> {reply.created_at}</p>
+                                <p><FaRegClock /> {convertDateTime(reply.created_at)}</p>
                             </div>
 
                             <div className="text">

@@ -9,6 +9,7 @@ import MyTickets from './pages/MyTickets';
 import AllTickets from './pages/AllTickets';
 import ClosedTickets from './pages/ClosedTickets';
 import TicketInfo from './pages/TicketInfo';
+import Admin from './pages/Admin';
 
 const Routes = () => {
     return (
@@ -23,6 +24,8 @@ const Routes = () => {
                 <Route path="/alltickets" exact component={AllTickets} />
                 <Route path="/closedtickets" exact component={ClosedTickets} />
                 <Route path="/ticket/:id" exact component={TicketInfo} />
+
+                <Route path="/admin" exact component={Admin} />
             </Switch>
         </BrowserRouter>
     )

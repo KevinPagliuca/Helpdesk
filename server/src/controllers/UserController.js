@@ -58,8 +58,8 @@ module.exports = {
             .where('email', email)
             .first();
 
-        var date = new Date();
-        const DataHoje = date.toLocaleString();
+        var DataHoje = new Date();
+
 
         if (!consult) {
 
@@ -90,8 +90,8 @@ module.exports = {
 
         global.user_id = req.headers.user_id;
 
-        var date = new Date();
-        const DataHoje = date.toLocaleString();
+        var DataHoje = new Date();
+
 
         const consult = await connection('users')
             .select('*')
@@ -157,8 +157,8 @@ module.exports = {
             .where('email', email)
             .first();
 
-        var date = new Date();
-        const DataHoje = date.toLocaleString();
+        var DataHoje = new Date();
+
 
 
         if (!consult) {

@@ -5,8 +5,7 @@ const saltRounds = 10;
 const salt = bcrypt.genSaltSync(saltRounds);
 const hash = bcrypt.hashSync(password, salt);
 
-var date = new Date();
-const DataHoje = date.toLocaleString();
+var DataHoje = new Date();
 
 exports.seed = async function (knex) {
 

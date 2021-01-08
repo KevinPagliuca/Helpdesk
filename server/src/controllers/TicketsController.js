@@ -13,8 +13,7 @@ module.exports = {
             status
         } = req.body;
 
-        var date = new Date();
-        const DataHoje = date.toLocaleString();
+        var DataHoje = new Date();
 
         const user_id = req.headers.user_id;
         const user_name = req.headers.user_name;
@@ -109,8 +108,7 @@ module.exports = {
             .first();
 
         if (ticket) {
-            var date = new Date();
-            const DataHoje = date.toLocaleString();
+            var DataHoje = new Date();
 
             if (ticket.user_id == user_id || admin === "true") {
 

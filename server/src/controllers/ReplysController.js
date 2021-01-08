@@ -7,10 +7,9 @@ module.exports = {
         const user_reply = req.headers.user_name;
         const user_id_reply = req.headers.user_id_reply;
 
-        var date = new Date();
-        const DataHoje = date.toLocaleString();
+        var DataHoje = new Date();
 
-        try {            
+        try {
             const insertReply = await connection('replys_tickets').insert({
                 text,
                 user_reply,
@@ -19,14 +18,14 @@ module.exports = {
                 created_at: DataHoje,
                 updated_at: DataHoje
             });
-            if(!insertReply){
-                res.status(400).json({Error: "Erro ao cadastrar comentário..."})
-            } 
+            if (!insertReply) {
+                res.status(400).json({ Error: "Erro ao cadastrar comentário..." })
+            }
             const idReply = insertReply[0];
-            res.status(200).json({id: idReply, text: text});
+            res.status(200).json({ id: idReply, text: text });
 
-        } catch(err){
-            res.status(400).json({error: err});
+        } catch (err) {
+            res.status(400).json({ error: err });
         }
     }
 }
